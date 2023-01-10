@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
-    font-family: Raleway;
-    color: white;
-    background-color: rgba(2, 128, 144, 1);
+    font-family: 'Poppins';
+    font-weight: 300;
+    color: #202020;
+    background-color: #F0F0F0;
+    letter-spacing: 1px;
 }
 
 #background {
@@ -21,13 +25,26 @@ body {
 a {
     color: inherit;
     text-decoration: underline;
+    transition: color 0.125s linear;
 }
 
 a:hover {
-    color: #BAFF29;
+    color: #EF6461;
 }
 
 .card {
     background: rgba(255, 255, 255, 0.75);
-    color: #0f0f0f;
+    color: #202020;
+}
+
+.social-link {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    line-height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    vertical-align: bottom;
 }

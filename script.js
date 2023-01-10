@@ -2,7 +2,7 @@ let canvas = document.getElementById('background');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let context = canvas.getContext('2d');
-context.fillStyle = 'rgba(26, 27, 65, 1)';
+context.fillStyle = 'rgba(239, 239, 239, 1)';
 context.fillRect(0, 0, canvas.width, canvas.height);
 
 let mouseIsDown = false;
@@ -165,7 +165,7 @@ function handleObjects()
 
 function updateObjects()
 {
-    context.fillStyle = 'rgba(26, 27, 65, 1)';
+    context.fillStyle = 'rgba(239, 239, 239, 1)';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < particles.length; i++) {
@@ -183,10 +183,10 @@ function updateObjects()
                 context.moveTo(particle.x, particle.y);
                 context.lineTo(otherParticle.x, otherParticle.y);
                 if (particle.frozenFor > 0) {
-                    context.strokeStyle = 'rgba(255, 0, 0, 0.05)';
+                    context.strokeStyle = 'rgba(239, 100, 97, 0.05)';
 
                 } else {
-                    context.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+                    context.strokeStyle = 'rgba(239, 100, 97, 0.01)';
                 }
                 context.stroke();
             }
@@ -197,14 +197,14 @@ function updateObjects()
         context.beginPath();
         let bomb = bombs[i];
         context.arc(bomb.x, bomb.y, bomb.radius, 0, Math.PI * 2, false);
-        context.strokeStyle = 'rgba(186, 255, 41, 0.5)';
+        context.strokeStyle = 'rgba(239, 100, 97, 0.5)';
         context.stroke();
 
         for (let j = 0; j < particles.length; j++) {
             let particle = particles[j];
 
             if (particle.distanceTo(bomb.x, bomb.y) < bomb.radius) {
-                particle.color = 'rgba(186, 255, 41, 1)';
+                particle.color = 'rgba(239, 100, 97, 1)';
                 particle.velocity = [0, 0];
                 particle.frozenFor = 3 * bomb.maxSize;
             }
