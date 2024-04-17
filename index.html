@@ -21,20 +21,22 @@
                     <div class="row justify-content-center h-100">
                         <div class="col-12 col-md-6 text-md-right my-auto">
                             <img src="sammakescode-sam-littler.png" alt="A picture of Sam of programming legend" class="rounded-circle shadow mb-3" width="128">
-                            <h1>SamMakesCode</h1>
+                            <h1>Sam Littler</h1>
+                            <p id="email"></p>
+                            <span id="mail-link" class="social-link mb-3" style="cursor:pointer">
+                                <i class="fa-regular fa-envelope"></i>
+                            </span>
                             <a href="https://github.com/sammakescode" class="social-link mb-3" target="_blank">
                                 <i class="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://twitter.com/sammakescode" class="social-link mb-3" target="_blank">
-                                <i class="fa-brands fa-twitter"></i>
                             </a>
                             <a href="https://www.linkedin.com/in/sam-littler-84646291/" class="social-link mb-3" target="_blank">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </a>
                         </div>
                         <div class="col-10 col-md-6 text-md-left my-auto">
-                            <p>Hi, my name's Sam Littler and I'm the CTO for <a href="https://dashsalt.com">DashSalt</a> - a new way to monetise your food content online.</p>
-                            <p>I build <b>web apps</b>, <b>mobile apps</b> and <b>API</b>s. I use <b>PHP</b> (especially <b>Laravel</b> & <b>Symfony</b>), <b>Javascript</b> (<b>React Native</b>, <b>Firebase</b>, <b>Node</b>, <b>npm</b>, <b>Vue.js</b>) and have experience with <b>Python</b>, <b>Java</b> and a bunch of other stuff.</p>
+                            <p>Hey, my name's Sam Littler and I'm a software developer. Perhaps yours?</p>
+                            <p>I'm a self-taught, versatile programmer capable to turning my hand to most programming languages, technologies and projects.</p>
+                            <p>I usually build <b>web apps</b>, <b>mobile apps</b> and <b>API</b>s. I use <b>PHP</b> (especially <b>Laravel</b> & <b>Symfony</b>), <b>Javascript</b> (<b>React Native</b>, <b>Firebase</b>, <b>Node</b>, <b>npm</b>, <b>Vue.js</b>) and have experience with <b>Python</b>, <b>Java</b> and a bunch of other stuff.</p>
                             <p>I'm a London-based coffee lover, coding enthusiast, cat-person, amateur bear-wrestler and father.</p>
                         </div>
                         <div class="col-10 mt-5">
@@ -46,5 +48,35 @@
         </div>
 
         <script src="script.js"></script>
+        <script>
+            const thingy = 'c2FtbGl0dGxlcjU3QGdtYWlsLmNvbQ==';
+
+            function ready(fn) {
+                if (document.readyState !== 'loading') {
+                    fn();
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+                }
+            }
+            let loaded = false;
+
+            ready(() => {
+                let mailLink = document.getElementById('mail-link');
+                mailLink.addEventListener('click', (e) => {
+                    if (!loaded) {
+                        let thingy2 = window.atob(thingy)
+                        mailLink.innerHTML = '<i class="fa solid fa-spinner fa-pulse"></i>';
+                        setTimeout(() => {
+                            document.getElementById('email').innerHTML = thingy2;
+                            mailLink.remove();
+                            // mailLink.innerHTML = thingy2;
+                            // mailLink.href = 'mailto:'+thingy2;
+                            // mailLink.innerHTML = '<i class="fa solid fa-envelope"></i>';
+                            loaded = true;
+                        }, 1000);
+                    }
+                })
+            })
+        </script>
     </body>
 </html>
