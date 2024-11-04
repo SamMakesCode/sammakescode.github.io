@@ -28,8 +28,12 @@ a {
     transition: color 0.125s linear;
 }
 
+.highlight {
+    color: #da4167;
+}
+
 a:hover {
-    color: #EF6461;
+    color: #da4167;
 }
 
 .card {
